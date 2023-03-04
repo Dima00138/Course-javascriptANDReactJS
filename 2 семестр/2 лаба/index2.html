@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Задание 2</title>
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>* {font-size: 1.1em;}</style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        var buff = "";
+        class Jobs extends React.Component {
+            constructor(props) {
+                super();
+                this.state = {id: ''};
+
+                this.handleChange = this.handleChange.bind(this);
+            }
+
+            handleChange(event) {
+                this.setState({id: event.target.id});
+                buff = JobMenu(event.target.id);
+            }
+            render() {
+                return <form>
+                <label for='r1'>Профессия 1<input type='radio' id='r1' name='j1' onChange={this.handleChange}/></label>
+                <label for='r2'>Профессия 2<input type='radio' id='r2' name='j1' onChange={this.handleChange}/></label>
+                <label for='r3'>Профессия 3<input type='radio' id='r3' name='j1' onChange={this.handleChange}/></label>
+                <label for='r4'>Профессия 4<input type='radio' id='r4' name='j1' onChange={this.handleChange}/></label>
+                <label for='r5'>Профессия 5<input type='radio' id='r5' name='j1' onChange={this.handleChange}/></label>
+                <label for='r6'>Профессия 6<input type='radio' id='r6' name='j1' onChange={this.handleChange}/></label>
+                {buff}
+                </form>;
+            }
+        }
+
+        function JobMenu(props) {
+            switch(props) {
+                case 'r1': return <div>Описание к профессии #1
+                <ul>
+                <li><a href="site1.com">Ссылка 1</a></li>
+                <li><a href="site2.com">Ссылка 2</a></li>
+                <li><a href="site3.com">Ссылка 3</a></li>
+                <li><a href="site4.com">Ссылка 4</a></li>
+                <li><a href="site5.com">Ссылка 5</a></li>
+                <li><a href="site6.com">Ссылка 6</a></li>
+                </ul></div>;
+                case 'r2': return <div>Описание к профессии #2
+                <ul>
+                <li><a href="site7.com">Ссылка 1</a></li>
+                <li><a href="site8.com">Ссылка 2</a></li>
+                <li><a href="site9.com">Ссылка 3</a></li>
+                <li><a href="site9.com">Ссылка 4</a></li>
+                <li><a href="site10.com">Ссылка 5</a></li>
+                <li><a href="site11.com">Ссылка 6</a></li>
+                </ul></div>;
+                case 'r3': return <div>Описание к профессии #3
+                <ul>
+                <li><a href="site12.com">Ссылка 1</a></li>
+                <li><a href="site13.com">Ссылка 2</a></li>
+                <li><a href="site14.com">Ссылка 3</a></li>
+                <li><a href="site15.com">Ссылка 4</a></li>
+                <li><a href="site16.com">Ссылка 5</a></li>
+                <li><a href="site17.com">Ссылка 6</a></li>
+                </ul></div>;
+                case 'r4': return <div>Описание к профессии #4
+                <ul>
+                <li><a href="site18.com">Ссылка 1</a></li>
+                <li><a href="site19.com">Ссылка 2</a></li>
+                <li><a href="site20.com">Ссылка 3</a></li>
+                <li><a href="site21.com">Ссылка 4</a></li>
+                <li><a href="site22.com">Ссылка 5</a></li>
+                <li><a href="site23.com">Ссылка 6</a></li>
+                </ul></div>;
+                case 'r5': return <div>Описание к профессии #5
+                <ul>
+                <li><a href="site24.com">Ссылка 1</a></li>
+                <li><a href="site25.com">Ссылка 2</a></li>
+                <li><a href="site26.com">Ссылка 3</a></li>
+                <li><a href="site27.com">Ссылка 4</a></li>
+                <li><a href="site28.com">Ссылка 5</a></li>
+                <li><a href="site29.com">Ссылка 6</a></li>
+                </ul></div>;
+                case 'r6': return <div>Описание к профессии #6
+                <ul>
+                <li><a href="site30.com">Ссылка 1</a></li>
+                <li><a href="site31.com">Ссылка 2</a></li>
+                <li><a href="site32.com">Ссылка 3</a></li>
+                <li><a href="site33.com">Ссылка 4</a></li>
+                <li><a href="site34.com">Ссылка 5</a></li>
+                <li><a href="site35.com">Ссылка 6</a></li>
+                </ul></div>;
+            }
+        }
+
+        ReactDOM.render(
+            <Jobs/>,
+            document.getElementById('root')
+        );
+    </script>
+</body>
+</html>

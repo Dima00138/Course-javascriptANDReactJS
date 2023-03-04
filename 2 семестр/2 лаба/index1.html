@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Задание 1</title>
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class Clock extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {timezone: props.timezone, format: props.format};
+            }
+            render() {
+                let clock = new Date(); //Получение даты
+                if (this.state.timezone == undefined || this.state.timezone == true) //проверка на наличие атрибута timezone
+                    var date = clock.toLocaleString();//Преобразование по умолчанию
+            else {
+                this.state.timezone = this.state.timezone.split(':');//Получение часов и минут из атрибута
+                if (parseInt(this.state.timezone) > 0) // проверка на знак
+                    this.state.timezone = (parseInt(this.state.timezone[0]) + (parseInt(this.state.timezone[1])/60)) * 60 * 60 * 1000;// получение недостающих миллисекунд
+                else 
+                    this.state.timezone = (parseInt(this.state.timezone[0]) - (parseInt(this.state.timezone[1])/60)) * 60 * 60 * 1000;
+
+                let Tzone = clock.getTimezoneOffset() * 60 * 1000;// получение локального смещения времени в миллисекундах
+                if (Tzone < 0) // проверка на знак 
+                    clock = clock.getTime() + Tzone; //приведение времени к UTC
+                else 
+                    clock = clock.getTime() - Tzone;
+
+                var date = new Date(clock + this.state.timezone);// определение даты для вывода
+
+            }
+            if (this.state.format == '12') { // проверка на наличие и правильность введенного атрибута format
+                return <div>{date.toLocaleString('en-GB', {hour12: true})}</div>;
+            }else {
+                return <div>{date.toLocaleString()}</div>;
+            }
+
+            }
+        }
+        /*function Clock(props) {
+            let clock = new Date(); //Получение даты
+            if (props.timezone == undefined || props.timezone == true) //проверка на наличие атрибута timezone
+            var date = clock.toLocaleString();//Преобразование по умолчанию
+            else {
+                let timezone = props.timezone.split(':');//Получение часов и минут из атрибута
+                if (parseInt(props.timezone) > 0) // проверка на знак
+                    timezone = (parseInt(timezone[0]) + (parseInt(timezone[1])/60)) * 60 * 60 * 1000;// получение недостающих миллисекунд
+                else 
+                    timezone = (parseInt(timezone[0]) - (parseInt(timezone[1])/60)) * 60 * 60 * 1000;
+
+                let Tzone = clock.getTimezoneOffset() * 60 * 1000;// получение локального смещения времени в миллисекундах
+                if (Tzone < 0) // проверка на знак 
+                    clock = clock.getTime() + Tzone; //приведение времени к UTC
+                else 
+                    clock = clock.getTime() - Tzone;
+
+                var date = new Date(clock + timezone);// определение даты для вывода
+
+            }
+            if (props.format == '12') { // проверка на наличие и правильность введенного атрибута format
+                return <div>{date.toLocaleString('en-GB', {hour12: true})}</div>;
+            }else {
+                return <div>{date.toLocaleString()}</div>;
+            }
+
+        }*/
+        var element = <div style= {{fontSize:"3em"}}>
+        <Clock timezone='3:30' format='12'/>
+        <Clock/>
+        </div>;
+        ReactDOM.render(
+            element,
+            document.getElementById('root')
+        );
+    </script>
+</body>
+</html>
