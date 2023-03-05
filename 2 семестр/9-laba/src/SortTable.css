@@ -1,0 +1,42 @@
+div button {
+    width: 100%;
+    height: 30px;
+    background-color: #FFe;
+    border: 0;
+    float:left;
+}
+
+.SortTable {
+    float: left;
+}
+
+div {display: inline-block;}
+.apple, .orange, .pear, .plum {
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.apple {
+    background-image: url("../public/apple.jpg");
+}
+.orange {
+    background-image: url("../public/orange.jpg");
+}
+.pear {
+    background-image: url("../public/pear.jpg");
+}
+
+.plum {
+    background-image: url("../public/plum.jpg");
+}
+
+form {
+    width: fit-content;
+    float: right;
+    margin: 30px 100px;
+}
+
+input[type="button"] {
+    margin-left: 2px;
+}

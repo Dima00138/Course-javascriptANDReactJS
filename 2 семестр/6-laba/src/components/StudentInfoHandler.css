@@ -1,0 +1,10 @@
+.StudentInfoHandler {
+    position: absolute;
+    top:75px;
+    right: -150%;
+}
+
+.StudentInfo {
+    position: absolute;
+    right: 43%;
+}

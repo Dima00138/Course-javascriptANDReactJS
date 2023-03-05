@@ -1,0 +1,157 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+input {
+  display: block;
+}
+input[type="submit"] {
+  margin: 0 auto;
+  margin-top: 5px;
+}
+textarea {
+  display: block;
+}
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+td {
+  border: 1px solid black;
+}
+.note {
+  position: relative;
+  width: fit-content;
+  border: 1px solid black;
+  background-color: rgba(255, 251, 22, 0.877);
+}
+
+.note-l {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+
+.notes-s {
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.note.red {
+  position: relative;
+  padding: 5px;
+  width: fit-content;
+  border: 1px solid black;
+  background-color: rgba(255, 22, 22, 0.877);
+}
+.grid {
+  display: grid;
+  grid-template-columns: 300px 300px;
+  grid-template-rows: 300px 300px;
+  grid-gap: 50px;
+}
+
+.calendar header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.calendar header button,
+.calendar header select {
+  margin: 0 4px;
+}
+
+.calendar table {
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: auto;
+}
+
+.calendar th {
+  vertical-align: middle;
+  text-align: center;
+  height: 36px;
+}
+
+.calendar .day {
+  padding: 4px 8px;
+  vertical-align: middle;
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.calendar .day:hover {
+  background-color: #eaeaea;
+  cursor: pointer;
+}
+
+.calendar .day.selected {
+  border: 2px solid dodgerblue;
+}
+
+.calendar .day.today {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.calendar .day.today:hover {
+  background-color: #0081ff;
+}
+
+.calendar .day.today.selected {
+  border: 2px solid lightgray;
+}
+
+
+
+button, select {
+  height: 2em;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #363636;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:focus, select:focus {
+  outline: none;
+}
+
+button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: .25em .75em;
+  text-align: center;
+}
+
+select {
+  padding: .25em .5em;
+}
+
+.calendar-cell {
+  border: 0;
+}
+.calendar, .vibor {
+  margin-left: 70px;
+}
+
+.vibor {
+  text-align: center;
+}

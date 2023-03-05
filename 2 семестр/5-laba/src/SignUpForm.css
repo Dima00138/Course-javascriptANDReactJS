@@ -1,0 +1,28 @@
+input {
+    display: block;
+    margin: 10px 0 0 20px;
+}
+
+label {
+    display: inline-block;
+    margin-right: -15px;
+}
+div {
+    margin-left: 20%;
+}
+
+form h1 {
+    text-align: center;
+}
+
+input[type="radio"] {
+    display: inline;
+}
+
+input[type="date"] {
+    width: 177px;
+}
+
+input[type="submit"] {
+    display: inline-block;
+}

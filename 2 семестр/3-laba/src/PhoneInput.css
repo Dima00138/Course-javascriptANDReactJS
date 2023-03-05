@@ -1,0 +1,65 @@
+div button {
+    width: 100%;
+    height: 30px;
+    background-color: #FFe;
+    border: 0;
+    float:left;
+}
+
+select {
+    width: 25px;
+    height: 20px;
+}
+
+span {
+    float: right;
+}
+img {
+    width: 15px;
+    height: 12px;
+}
+
+form {
+    display: inline-block;
+}
+
+.ftel {
+    display: none;
+    width: 200px;
+    height: 100px;
+    background-color: blue;
+}
+
+.ftel label {
+    width: 100%;
+}
+
+.by {
+    background-image: url("../public/by.png");
+    background: cover;
+}
+
+.ru {
+    background-image: url("../public/ru.png");
+    background: cover;
+}
+
+.uk {
+    background-image: url("../public/uk.png");
+    background: cover;
+}
+
+.po {
+    background-image: url("../public/po.png");
+    background: cover;
+}
+
+.lt {
+    background-image: url("../public/lt.png");
+    background: cover;
+}
+
+.lv {
+    background-image: url("../public/lv.png");
+    background: cover;
+}
